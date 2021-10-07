@@ -11,10 +11,11 @@ public class IC74hc00 extends pins {
     }
     public void update()    {
         for (pins.OUTPUTPIN outputpin: pins.OUTPUTPIN.values()) {
-            io[outputpin.getIndex()] = io[
-                    outputpin.assossicatedAINPUTPIN.getIndex()]
+            io[outputpin.getIndex()] = !(
+                    io[outputpin.assossicatedAINPUTPIN.getIndex()]
                     &&
-                    io[outputpin.assossicatedBINPUTPIN.getIndex()];
+                    io[outputpin.assossicatedBINPUTPIN.getIndex()]);
         }
+
     }
 }
